@@ -11,7 +11,7 @@ for address, name in component.list("turret", false) do
   table.insert(turrets, component.proxy(address))
 end
 
-local columns = 5
+local columns = 8
 local rows = 2
 
 local workspace, window = system.addWindow(GUI.filledWindow(1, 1, screen_width, screen_height, 0x000000))
