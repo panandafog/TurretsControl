@@ -128,18 +128,6 @@ local function setAllEnabled(enabled)
   updateAttacksPlayersState()
 end
 
-
-local enableAllButton = window:addChild(GUI.button(screen_width // 2 - 20, 1, 15, 3, 0xFFFFFF, 0x555555, 0x880000, 0xFFFFFF, "Enable all"))
-enableAllButton.onTouch = function()
-  setAllEnabled(true)
-end
-
-
-local disableAllButton = window:addChild(GUI.button(screen_width // 2 + 20, 1, 15, 3, 0xFFFFFF, 0x555555, 0x880000, 0xFFFFFF, "Disable all"))
-disableAllButton.onTouch = function()
-  setAllEnabled(false)
-end
-
 toggleAttacksMobsButton.onTouch = function()
   local attacks = not turrets[1].isAttacksMobs()
   for i = 1, #turrets, 1 do
