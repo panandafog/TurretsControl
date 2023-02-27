@@ -33,8 +33,8 @@ local attacksMobsSwitches = {}
 local attacksNeutralsSwitches = {}
 local attacksPlayersSwitches = {}
 
-local panel_width = screen_width // columns - 2
-local panel_height = screen_height // rows - 5
+local panel_width = screen_width / columns - 2
+local panel_height = screen_height / rows - 5
 
 local panel = panels_layout:setPosition(1, 1, panels_layout:addChild(GUI.panel(1, 1, panel_width, panel_height, 0x272727)))
 local internal_layout = layout:setPosition(1, 1, layout:addChild(GUI.layout(1, 1, panel_width, panel_height, 1, 4)))
@@ -50,7 +50,7 @@ if #turrets > 0 then
     local turret = turrets[i + 1]
 	
 	local col = math.fmod(i + 1, columns) + 1
-	local row = (i + 1) // columns + 1
+	local row = math.floor((i + 1) / columns + 1)
 	
 	layout:setFitting(col, row, false, false, 0, 0)
 	local panel = panels_layout:setPosition(col, row, panels_layout:addChild(GUI.panel(1, 1, panel_width, panel_height, 0x262626)))
