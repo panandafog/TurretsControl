@@ -14,6 +14,16 @@ end
 local columns = 8
 local rows = 2
 
+local turrets_count = #turrets
+
+if turrets_count < 8 then
+	rows = 1
+elseif turrets_count < 17 then
+	rows = 2
+else 
+	rows = 3
+end;
+
 local workspace, window = system.addWindow(GUI.filledWindow(1, 1, screen_width, screen_height, 0x000000))
 
 local panels_layout = window:addChild(GUI.layout(0, 2, window.width, window.height, columns, rows))
